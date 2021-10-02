@@ -19,7 +19,7 @@ sudo apt-get install rpcbind build-essential cmake
 2. Generate the client and server RPC code.
 ```sh
 cd ./src/rpc/
-rpcgen -aC list.x
+rpcgen -C list.x
 ```
 
 3. Assemble your build system and start building.
@@ -27,3 +27,6 @@ rpcgen -aC list.x
 cd .
 cmake . && make
 ```
+
+
+... or use the build script
