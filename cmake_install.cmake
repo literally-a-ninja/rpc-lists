@@ -1,4 +1,4 @@
-# Install script for directory: /home/johnny/Repositories/hla_plugin_mngr
+# Install script for directory: /home/johnny/Repositories/rpc_fun
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/johnny/Repositories/hla_plugin_mngr/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/johnny/Repositories/rpc_fun/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

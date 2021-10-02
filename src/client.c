@@ -1,33 +1,6 @@
-#include "rpc/list.h"
 #include "common.h"
+#include "util.h"
 #include <ctype.h>
-
-CLIENT *ctor_cl(char *host)
-{
-	CLIENT *cl;
-#ifndef	DEBUG
-	cl = clnt_create (host, LIST_MANI_PROG, DATE_VERS, "udp");
-	if (cl == NULL) {
-		clnt_pcreateerror (host);
-		exit (1);
-	}
-#endif	/* DEBUG */
-	return cl;
-}
-
-void dtor_cl(CLIENT * cl)
-{
-#ifndef	DEBUG
-	clnt_destroy (cl);
-#endif	 /* DEBUG */
-}
-
-typedef double *(*rpc_sigcall_t)(items*, CLIENT*);
-
-typedef struct {
-	rpc_sigcall_t fn;
-	items *items;
-} pgrm;
 
 rpc_sigcall_t execline_parse_fn(int args, char **argv)
 {
@@ -73,31 +46,6 @@ items *execline_parse_list(int args, char **argv)
 	it->items_len = i;
 
 	return it;
-}
-
-
-void dtor_argv(char **argv, size_t len)
-{
-	if (!argv) return;
-
-	unsigned i;
-	for (i = 0; i < len; i++)
-	{
-		if (argv[i]) free(argv[i]);
-	}
-}
-
-void dtor_pgrm(pgrm *p)
-{
-	if (!p) return;
-
-	if (p->items) 
-	{
-		if (p->items->items_val) free(p->items->items_val);
-		free(p->items);
-	}
-
-	free(p);
 }
 
 pgrm *execline_parse(char *line)
@@ -185,8 +133,6 @@ void run(char *host)
 
 		dtor_pgrm(p);
 	}
-	// result_1 = sum_1(&sum_1_arg, clnt);
-
 }
 
 
