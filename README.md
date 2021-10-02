@@ -1,3 +1,4 @@
+![A screenshot of the client and server application](preview.png)
 # RPC List Manipulator
 
 This is coursework for my distributed systems & networking class. The server provides the following procedures (functions) to the clients: 
