@@ -4,7 +4,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(rpc_common STATIC src/rpc/list_xdr.c src/util.c)
 target_include_directories(rpc_common PUBLIC /usr/include/tirpc)
-target_link_libraries(rpc_common -ltirpc -lnsl)
+target_link_libraries(rpc_common -ltirpc)
 
 set(EXECUTABLE_OUTPUT_PATH build)
 
