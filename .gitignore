@@ -1,0 +1,12 @@
+# cmake spam
+build
+bin
+.cache
+CMakeFiles
+CMakeCache.txt
+compile_commands.json
+
+# make your deps!
+src/rpc/*.c
+src/rpc/*.h
+src/rpc/*.list
